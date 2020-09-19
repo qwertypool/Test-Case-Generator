@@ -23,9 +23,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = 'aw@-!pcza&^m$)oh)+^b_82eo(h+(l!jrrvusle7_1i3($cq30'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['testcases-generator.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -136,7 +136,7 @@ for extra_p in (r"Library\mingw-w64\bin",
 
 os.environ["PATH"] = new_p + os.environ["PATH"]  # set it for Python
 os.putenv("PATH", os.environ["PATH"])  # push it at the OS level
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MESSAGE_TAGS = {
     messages.ERROR:'danger',
 }
