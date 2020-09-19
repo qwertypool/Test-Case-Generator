@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
 from django.contrib.messages import constants as messages
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,9 +24,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
 SECRET_KEY = 'aw@-!pcza&^m$)oh)+^b_82eo(h+(l!jrrvusle7_1i3($cq30'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['testcases-generator.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['testcases-generator.herokuapp.com']
 
 
 # Application definition
@@ -120,22 +121,28 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 import sys
-import django_heroku
-env_p = sys.prefix  # path to the env
-print("Env. path: {}".format(env_p))
 
-new_p = ''
-for extra_p in (r"Library\mingw-w64\bin",
-    r"Library\usr\bin",
-    r"Library\bin",
-    r"Scripts",
-    r"bin"):
-    new_p +=  os.path.join(env_p, extra_p) + ';'
+# env_p = sys.prefix  # path to the env
+#print("Env. path: {}".format(env_p))
 
-os.environ["PATH"] = new_p + os.environ["PATH"]  # set it for Python
-os.putenv("PATH", os.environ["PATH"])  # push it at the OS level
+# new_p = ''
+# for extra_p in (r"Library\mingw-w64\bin",
+#     r"Library\usr\bin",
+#     r"Library\bin",
+#     r"Scripts",
+#     r"bin"):
+#     new_p +=  os.path.join(env_p, extra_p) + ';'
+
+# os.environ["PATH"] = new_p + os.environ["PATH"]  # set it for Python
+# os.putenv("PATH", os.environ["PATH"])  # push it at the OS level
+STATICFILES_DIRS=[
+os.path.join(BASE_DIR,'static')
+]
+    
+
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 MESSAGE_TAGS = {
     messages.ERROR:'danger',
