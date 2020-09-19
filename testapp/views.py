@@ -190,8 +190,11 @@ def variable_length_strings(request):
             flag = request.POST.get('flag',True)
             if int(testcases)<=0 or int(min_length)<0 or int(max_length)<0 or int(max_length)<int(min_length) or len(chars)<=0:
                 messages.error(request,"Invalid Input")
-            elif distinct == 'True' and (int(max_length)-int(min_length))<len(chars):
-                messages.error(request,"Now sufficient values to make distinctive")
+            elif distinct == 'True' and int(max_length)>len(chars):
+                print("len(chars) = ",len(chars))
+                print("int(max_length)-int(min_length)) = ",int(max_length)-int(min_length))
+                print("distinct = ",distinct)
+                messages.error(request,"Not sufficient values to make distinctive Strings")
             else:
                 z=1
         except ValueError:
