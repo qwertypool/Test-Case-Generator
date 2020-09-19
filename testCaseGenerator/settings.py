@@ -26,7 +26,7 @@ SECRET_KEY = 'aw@-!pcza&^m$)oh)+^b_82eo(h+(l!jrrvusle7_1i3($cq30'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['testcases-generator.herokuapp.com']
+ALLOWED_HOSTS = ['testcases-generator.herokuapp.com/start']
 
 
 # Application definition
