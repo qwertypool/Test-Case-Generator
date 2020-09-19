@@ -1,0 +1,103 @@
+
+    {% extends 'index.html' %}
+
+
+{% block b %}
+
+<div class="container my-4">
+    <h1>Generate String test cases</h1>
+    <form method="post">
+        {% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="testcase"><strong>Test Cases</strong></label>
+      <input type="number" class="form-control" id="testcase" name="testcase" placeholder="Number Of Test Cases"  required>
+    </div>
+        <div class="form-group col-md-6">
+      <label for="stringsize"><strong>String Size</strong></label>
+      <input type="number" class="form-control" id="stringsize" name="stringsize" placeholder="Size of the String" required>
+    </div>
+  </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+      <label for="chars"><strong>Characters</strong></label>
+      <input type="text" class="form-control" id="chars" name="chars" placeholder="Characters to be included in string" required>
+    </div>
+        
+    </div>
+
+     <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="distinct"><strong>Distinct Values</strong></label>
+      <select id="distinct" name="distinct"  class="form-control">
+        <option >True</option>
+        <option selected>False</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="flag"><strong>Display Number of Test Cases Flag</strong></label>
+      <select id="flag" name="flag"  class="form-control">
+        <option selected>True</option>
+        <option>False</option>
+      </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Generate</button>
+  </div>
+
+  
+</form>
+</div><br><br>
+
+<div class="container">
+<div class="container">
+  <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item-active" aria-current="page"><strong>Your Result</strong></li>
+  </ol>
+</nav>
+<button class="btn btn-secondary" title="Copy on clipboard" id="copycodeid"  onClick='copyText("cp")'> Copy </button>
+<div id="cp">
+{% if flag == 'True' %}
+<ul class="list-group list-group-flush">
+<li class="list-group-item">{{testcases}}</li>
+</ul>
+{% endif %}
+{% for r in ls %}
+<ul class="list-group list-group-flush">
+       <li class="list-group-item">{{r}}</li>
+       </ul>
+{% endfor %}
+</div>
+</div>
+</div>
+<br><br><br><br>
+<script>  
+  function copyText(element) {
+    element = document.getElementById("cp");
+  var range, selection, worked;
+
+  if (document.body.createTextRange) {
+    range = document.body.createTextRange();
+    range.moveToElementText(element);
+    range.select();
+  } else if (window.getSelection) {
+    selection = window.getSelection();        
+    range = document.createRange();
+    range.selectNodeContents(element);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+  
+  try {
+    document.execCommand('copy');
+    document.getElementById('copycodeid').innerHTML = "Copied!";
+  }
+  catch (err) {
+    alert('unable to copy text');
+  }
+}
+</script>
+{% endblock b %}
+    
+

@@ -1,0 +1,101 @@
+ {% extends 'index.html' %}
+
+ 
+ {% block homeactive %}
+  <style>
+    .text2-col{
+      color: yellow;
+    }
+  </style>
+ {% endblock homeactive %}
+   
+ <!-- <style>
+       .text22-col{
+    color: rgb(228, 2, 2);
+    font-size: 10px;
+    font-family: 'Ubuntu', sans-serif;
+  }
+ </style> -->
+ 
+ {% block style %}
+            .text22-col{
+    color: rgb(228, 2, 2);
+    font-size: 10px;
+    font-family: 'Ubuntu', sans-serif;
+  }
+ {% endblock style %}
+     
+ {% block b %}
+ <div class="container">
+<div class="jumbotron jumbotron-fluid my-3">
+  <div class="container ">
+    <h1 class="display-4" style="font-family: 'Ubuntu', sans-serif;color: #0c3c26;">Testcase Generator</h1>
+    <p class="lead" style="font-family: 'Ubuntu', sans-serif; color: black;font-size: large;" >Hey geeks! It is basically used to generate testcases on the basis of inputs provided and have many other features along with that.
+        It works on arrays, numbers, strings, matrix(char & arrays), trees & graphs(weighted & unweighted). 
+    </p>
+  </div>
+</div><br><br>
+<div class="accordion" id="accordionExample">
+  <div class="card">
+      <h1 style="font-family: 'Ubuntu', sans-serif; color: #0c3c26;">Possible errors & FAQs</h1>
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-lg" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Invalid Input
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body" style="font-family: 'Ubuntu', sans-serif; color: black;font-size: medium;">
+          Possibly due to negative test-cases or negative/non-integer input lengths or also due to ranges interchange(minimum>maximum). Check the input again. Provide natural numbers for test-cases and the input lengths.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed btn-lg" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Now sufficient values to make distinctive!?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body" style="font-family: 'Ubuntu', sans-serif; color: black;font-size: medium;">
+        Distinctive field is chosen to ensure all the outputs are distinct(not common). Now, incase you provide insufficient number of characters and expect a larger distinct length output, you might possibly encounter this error. Provide input such that length of characters given is greater than or equal to the expected output length.
+    </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed btn-lg" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Number of edges are more than that could be created using that nodes?!
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body" style="font-family: 'Ubuntu', sans-serif; color: black;font-size: medium;">
+          You encounter this in graphs sections. The edges is not possible with the given number of vertices. For valid inputs try providing Edges less than or = ((nodes)*(nodes-1))/2
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-header" id="headingFour">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed btn-lg" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseThree">
+          Flags?!
+        </button>
+      </h2>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+      <div class="card-body" style="font-family: 'Ubuntu', sans-serif; color: black;font-size: medium;">
+        They are usually to make sure whether the number of test-cases/ certain inputs provided, should be displayed as part of output or not.
+    </div>
+    </div>
+  </div>
+</div>
+</div><br><br><br><br>
+ {% endblock b %}
+     

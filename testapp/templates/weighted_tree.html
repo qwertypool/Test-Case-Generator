@@ -1,0 +1,119 @@
+
+    {% extends 'index.html' %}
+
+
+{% block b %}
+
+<div class="container my-4">
+    <h1>Generate Weighted Tree test cases</h1>
+    <form method="post">
+        {% csrf_token %}
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="testcase"><strong>Test Cases</strong></label>
+      <input type="number" class="form-control" id="testcase" name="testcase" placeholder="Number Of Test Cases"  required>
+    </div>
+        <div class="form-group col-md-6">
+      <label for="num_nodes"><strong>Number Of Nodes</strong></label>
+      <input type="number" class="form-control" id="num_nodes" name="num_nodes" placeholder="Number of nodes in the tree" required>
+    </div>
+  </div>
+    <div class="form-row">
+      <div class="form-group col-md-12">
+      <label for="index"><strong>Starting Index</strong></label>
+      <input type="number" class="form-control" id="index" name="index" placeholder="Starting Index of the Tree" required>
+    </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+      <label for="min_weight"><strong>Minimum Weight</strong></label>
+      <input type="number" class="form-control" id="min_weight" name="min_weight" placeholder="Minimum Weight Of Tree" required>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="max_weight"><strong>Maximum Weight</strong></label>
+      <input type="number" class="form-control" id="max_weight" name="max_weight"  placeholder="Maximum Weight Of Tree" required>
+    </div>
+        
+    </div>
+
+     <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="num_flag"><strong>Display Number of Nodes Flag</strong></label>
+      <select id="num_flag" name="num_flag"  class="form-control">
+        <option selected>True</option>
+        <option>False</option>
+      </select>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="flag"><strong>Display Number of Test Cases Flag</strong></label>
+      <select id="flag" name="flag"  class="form-control">
+        <option selected>True</option>
+        <option>False</option>
+      </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Generate</button>
+  </div>
+
+  
+</form>
+</div><br><br>
+
+<div class="container">
+<div class="container">
+  <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item-active" aria-current="page"><strong>Your Result</strong></li>
+  </ol>
+</nav>
+<button class="btn btn-secondary" title="Copy on clipboard"  id="copycodeid" onClick='copyText("cp")'> Copy </button>
+<div id="cp">
+{% if flag == 'True' %}
+<ul class="list-group list-group-flush">
+<li class="list-group-item">Testcases : {{testcases}}</li>
+</ul>
+{% endif %}
+{% if num_flag == 'True' %}
+<ul class="list-group list-group-flush">
+<li class="list-group-item">Number of Nodes : {{num_nodes}}</li>
+</ul>
+{% endif %}
+{% for r in ls %}
+<ul class="list-group list-group-flush">
+       <li class="list-group-item">{{r}}</li>
+       </ul>
+{% endfor %}
+</div>
+</div>
+</div>
+<br><br><br><br>
+<script>  
+  function copyText(element) {
+    element = document.getElementById("cp");
+  var range, selection, worked;
+
+  if (document.body.createTextRange) {
+    range = document.body.createTextRange();
+    range.moveToElementText(element);
+    range.select();
+  } else if (window.getSelection) {
+    selection = window.getSelection();        
+    range = document.createRange();
+    range.selectNodeContents(element);
+    selection.removeAllRanges();
+    selection.addRange(range);
+  }
+  
+  try {
+    document.execCommand('copy');
+  document.getElementById('copycodeid').innerHTML = "Copied!";
+  }
+  catch (err) {
+    alert('unable to copy text');
+  }
+}
+</script>
+{% endblock b %}
+    
+

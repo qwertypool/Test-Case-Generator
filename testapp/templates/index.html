@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <title>TestCase Gen</title>
+</head>
+
+
+  
+
+  
+<style>
+  .nav-col{
+    background-color: #0c3c26;
+  }
+  .text-col{
+    /* color: white; */
+    color: yellow;
+    font-size: 45px;
+    font-weight: bolder;
+    font-family: 'Sacramento', cursive;
+    /* text-decoration: none; */
+
+    /* font-family: Palatino, "Palatino Linotype", "Book Antiqua", "Hoefler Text", Georgia, "Lucida Bright", Cambria, Times, "Times New Roman", serif; */
+  }
+  .text2-col{
+    color: antiquewhite;
+    font-size: 19px;
+    font-family: 'Ubuntu', sans-serif;
+  
+  }
+  .text2-col:hover{
+    text-decoration: none;
+    color: yellow;
+  }
+  .footer-col{
+    color: antiquewhite;
+    font-size: 15px;
+    font-family: 'Ubuntu', sans-serif;
+  }
+    .custom-toggler .navbar-toggler { 
+            border-color: white; 
+            /* background-color: rgba(rgb(0, 174, 255), green, blue, alpha); */
+        }
+        .custom-toggler .navbar-toggler-icon { 
+            background-image: url( 
+"data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E"); 
+        } 
+
+</style>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-expand-sm nav-col">
+  <h1 class="navbar-brand text-col">Testcase Generator</h1>
+  <button class="navbar-toggler custom-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-4">
+      <li class="nav-item active">
+        <a class="nav-link text2-col 
+           " href="/home/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text2-col" href="/numbers/">Numbers</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text2-col" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Arrays
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/arrays/">Generate Arrays</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/matrix/">Generate Matrix</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text2-col" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Strings
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/strings/">Generate Strings</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/variable_strings/">Variable Length Strings</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/string_matrix/">Generate Char Matrix</a>
+        </div>
+              <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text2-col" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Trees
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/unweighted_tree/">Unweighted Tree</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/weighted_tree/">Weighted Tree</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text2-col" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Graphs
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/unweighted_graph/">Unweighted Graphs</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/weighted_graph/">Weighted Graphs</a>
+        </div>
+      </li>
+
+      </li>
+    </ul>
+  </div>
+</nav>
+<script>
+  function change(){
+    var home=document.getElementById("home");
+    home.style.color="yellow";
+  }
+</script>
+</body>
+{% for message in messages %}
+    <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+        <strong>Message: </strong> {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+
+{% block b %}
+        
+{% endblock b %}
+
+<!-- Footer -->
+<footer class="page-footer font-small blue pt-2 nav-col">
+  <div class="footer-copyright text-center py-3 footer-col">© 2020 Copyright:
+    <a href="https://mdbootstrap.com/" class="footer-col"> deepapandey364@gmail.com</a>
+  </div>
+</footer>
+</html>
+
+
+
