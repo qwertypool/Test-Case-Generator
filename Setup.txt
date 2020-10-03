@@ -3,6 +3,6 @@ Start VirtualEnv -: .\venv\Scripts\activate
 To run the requirement.txt -: pip install -r requirements.txt 
 To run the server -: python manage.py runserver
 
-Addional migration command-:
+Additional migration command-:
 1) py manage.py makemigrations
 2) py manage.py migrate
