@@ -40,16 +40,16 @@
    > python manage.py runserver
 6. Now you can open the Website in a browser using [http://localhost:8000/start](http://localhost:8000/start)
 
-**Note: If you find migrations related issue please find the setup.txt :smile:**
+**Note: If you find migrations related issue please check the setup.txt :smile:**
 
 <h2>For Contribution</h2>
 <ol>
     <li>Fork the repository</li>
-    <li>Open Git Bash/ your preffered code editor</li>
+    <li>Open Git Bash/ your preferred code editor</li>
     <li>Hit <strong>$ git clone git@github.com:qwertypool/Test-Case-Generator.git</strong> </li>
     <li>Now, you have a local copy of your fork of Test-Case Generator</li>
     <li>Make changes on the code and add new features</li>
     <li>Make a pull request (I will review and merge the code)</li>
 </ol>
 
-**Do star the repo if you liked it!🤪**
+*Do star the repo if you liked it!🤪*
